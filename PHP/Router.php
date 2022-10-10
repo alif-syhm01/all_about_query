@@ -32,11 +32,10 @@ class Router
     private function formatRoute($route)
     {
         $result = rtrim($route, '/');
-        if ($result === '') {
-            return '/';
-        }
 
-        return $result;
+        return $result === ''
+            ? '/'
+            : $result;
     }
 
     private function invalidMethodHandler()
